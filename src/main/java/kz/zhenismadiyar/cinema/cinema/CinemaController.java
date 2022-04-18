@@ -2,6 +2,7 @@ package kz.zhenismadiyar.cinema.cinema;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -29,6 +30,12 @@ public class CinemaController {
     @PostMapping
     public void createCinema(@RequestBody Cinema cinema) {
         cinemaService.createCinema(cinema);
+    }
+
+    @PostMapping("/uploadFile")
+    public void uploadFile(@RequestParam("cinemaId") Long cinemaId,
+                           @RequestParam MultipartFile file) {
+        cinemaService.uploadFile(cinemaId, file);
     }
 
     @PutMapping(path = {"{cinemaId}"})

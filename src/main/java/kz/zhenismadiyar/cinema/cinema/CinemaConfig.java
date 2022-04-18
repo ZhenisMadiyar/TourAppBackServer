@@ -1,21 +1,19 @@
-//package kz.zhenismadiyar.cinema.cinema;
-//
-//import org.springframework.boot.CommandLineRunner;
-//import org.springframework.context.annotation.Bean;
-//import org.springframework.context.annotation.Configuration;
-//
-//import java.util.List;
-//
-//@Configuration
-//public class CinemaConfig {
-//
-//    @Bean
-//    CommandLineRunner commandLineRunner(CinemaRepository cinemaRepository) {
-//        return args -> {
-//            Cinema cinema1 = new Cinema( "Almaty cinema");
-//            Cinema cinema2 = new Cinema("Astana cinema");
-//
-//            cinemaRepository.saveAll(List.of(cinema1, cinema2));
-//        };
-//    }
-//}
+package kz.zhenismadiyar.cinema.cinema;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class CinemaConfig implements WebMvcConfigurer {
+
+    @Value("${upload.path}")
+    private String uploadPath;
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/img/**")
+                .addResourceLocations("file://"+ uploadPath + "/");
+    }
+}

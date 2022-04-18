@@ -1,5 +1,7 @@
 package kz.zhenismadiyar.cinema.cinema;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.persistence.*;
 
 @Entity
@@ -21,6 +23,7 @@ public class Cinema {
     private String title;
     private String address;
     private Double rating;
+    private String filename;
 
     public Cinema() {
 
@@ -30,11 +33,12 @@ public class Cinema {
         this.title = title;
     }
 
-    public Cinema(Long id, String title, String address, Double rating) {
+    public Cinema(Long id, String title, String address, Double rating, String filename) {
         this.id = id;
         this.title = title;
         this.address = address;
         this.rating = rating;
+        this.filename = filename;
     }
 
     public void setId(Long id) {
@@ -67,5 +71,13 @@ public class Cinema {
 
     public String getAddress() {
         return address;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 }
