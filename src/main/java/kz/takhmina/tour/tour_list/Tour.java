@@ -1,44 +1,40 @@
-package kz.zhenismadiyar.cinema.cinema;
-
-import org.springframework.web.multipart.MultipartFile;
+package kz.takhmina.tour.tour_list;
 
 import javax.persistence.*;
 
 @Entity
 @Table
-public class Cinema {
+public class Tour {
 
     @Id
     @SequenceGenerator(
-            name = "cinema_sequence",
-            sequenceName = "cinema_sequence",
+            name = "tour_sequence",
+            sequenceName = "tour_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "cinema_sequence"
+            generator = "tour_sequence"
     )
 
     private Long id;
     private String title;
     private String address;
     private Double rating;
-    private String filename;
 
-    public Cinema() {
+    public Tour() {
 
     }
 
-    public Cinema(String title) {
+    public Tour(String title) {
         this.title = title;
     }
 
-    public Cinema(Long id, String title, String address, Double rating, String filename) {
+    public Tour(Long id, String title, String address, Double rating, String filename) {
         this.id = id;
         this.title = title;
         this.address = address;
         this.rating = rating;
-        this.filename = filename;
     }
 
     public void setId(Long id) {
@@ -71,13 +67,5 @@ public class Cinema {
 
     public String getAddress() {
         return address;
-    }
-
-    public String getFilename() {
-        return filename;
-    }
-
-    public void setFilename(String filename) {
-        this.filename = filename;
     }
 }

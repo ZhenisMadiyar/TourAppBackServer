@@ -1,10 +1,10 @@
-package kz.zhenismadiyar.cinema;
+package kz.takhmina.tour;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CinemaApplicationTests {
+class TourApplicationTests {
 
 	@Test
 	void contextLoads() {

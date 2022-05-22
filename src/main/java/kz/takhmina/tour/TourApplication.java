@@ -1,13 +1,13 @@
-package kz.zhenismadiyar.cinema;
+package kz.takhmina.tour;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CinemaApplication {
+public class TourApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CinemaApplication.class, args);
+		SpringApplication.run(TourApplication.class, args);
 	}
 
 }
