@@ -19,8 +19,9 @@ public class Tour {
 
     private Long id;
     private String title;
-    private String address;
+    private String price;
     private Double rating;
+    private String filename;
 
     public Tour() {
 
@@ -30,11 +31,12 @@ public class Tour {
         this.title = title;
     }
 
-    public Tour(Long id, String title, String address, Double rating, String filename) {
+    public Tour(Long id, String title, String price, Double rating, String filename) {
         this.id = id;
         this.title = title;
-        this.address = address;
+        this.price = price;
         this.rating = rating;
+        this.filename = filename;
     }
 
     public void setId(Long id) {
@@ -43,10 +45,6 @@ public class Tour {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public Double getRating() {
@@ -65,7 +63,19 @@ public class Tour {
         return title;
     }
 
-    public String getAddress() {
-        return address;
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 }

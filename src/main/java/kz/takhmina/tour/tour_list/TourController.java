@@ -2,6 +2,7 @@ package kz.takhmina.tour.tour_list;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -32,4 +33,9 @@ public class TourController {
         tourService.createTour(tour);
     }
 
+    @PostMapping("/uploadFile")
+    public void uploadFile(@RequestParam("tourId") Long tourId,
+                           @RequestParam MultipartFile file) {
+        tourService.uploadFile(tourId, file);
+    }
 }
